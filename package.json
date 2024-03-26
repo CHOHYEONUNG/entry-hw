@@ -5,13 +5,13 @@
     "author": "EntryLabs",
     "main": "./app/src/index.bundle.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=development electron -r source-map-support/register app/src/index.bundle.js",
+        "start": "cross-env NODE_ENV=development electron -r source-map-support/register app/src/index.bundle.js --openssl-legacy-provider",
         "start:prod": "cross-env NODE_ENV=production electron -r source-map-support/register app/src/index.bundle.js",
         "debug": "cross-env NODE_ENV=development electron -r source-map-support/register --inspect app/src/index.bundle.js",
         "test": "cross-env NODE_NO_WARNINGS=1 ts-node --files ./cli/connectionTest.ts",
         "script:create": "node ./cli/createJson.js",
         "script:resize": "node cli/imageResize.js",
-        "webpack:dev": "cross-env NODE_ENV=development webpack",
+        "webpack:dev": "cross-env NODE_ENV=development webpack --openssl-legacy-provider",
         "webpack:prod": "cross-env NODE_ENV=production webpack",
         "webpack:watch": "cross-env NODE_ENV=development webpack -w",
         "update:licence": "lcdoc make -o app/OPENSOURCE.md -d 1",
@@ -20,7 +20,7 @@
         "dist:mac": "cross-env BUILD_MODE=STANDALONE npm run webpack:prod && cross-env NOTARIZE=false CSC_NAME=\"Connect Foundation (DLFUSDA3L5)\" electron-builder",
         "dist:offline": "cross-env BUILD_MODE=OFFLINE npm run webpack:prod",
         "rebuild": "electron-rebuild -f -w serialport,node-hid",
-        "setting": "npm run rebuild && npm run webpack:dev"
+        "setting": "yarn rebuild && yarn webpack:dev"
     },
     "devDependencies": {
         "@types/cross-spawn": "^6.0.1",
