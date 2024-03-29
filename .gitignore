@@ -13,6 +13,5 @@ app/ssl/
 app/node_modules/
 /build/*.exe
 build/*.zip
-*.build.js
 *.bundle.js
 *.map
