@@ -5,7 +5,7 @@
     "author": "EntryLabs",
     "main": "./app/src/index.bundle.js",
     "scripts": {
-        "start": "cross-env NODE_ENV=development electron -r source-map-support/register app/src/index.bundle.js --openssl-legacy-provider",
+        "start": "cross-env NODE_ENV=development electron -r source-map-support/register app/src/index.bundle.js --openssl-legacy-provider unset NODE_OPTIONS",
         "start:prod": "cross-env NODE_ENV=production electron -r source-map-support/register app/src/index.bundle.js",
         "debug": "cross-env NODE_ENV=development electron -r source-map-support/register --inspect app/src/index.bundle.js",
         "test": "cross-env NODE_NO_WARNINGS=1 ts-node --files ./cli/connectionTest.ts",
@@ -46,7 +46,7 @@
         "electron": "12.0.2",
         "electron-builder": "^22.8.0",
         "electron-notarize": "^0.2.1",
-        "electron-rebuild": "2.3.5",
+        "electron-rebuild": "3.2.9",
         "eslint": "^6.8.0",
         "file-loader": "^5.0.2",
         "immer": "^4.0.2",
