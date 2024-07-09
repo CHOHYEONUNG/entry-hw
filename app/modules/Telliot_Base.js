@@ -1094,4 +1094,3 @@ class TelliotBase extends BaseModule {
 }
 
 module.exports = { TelliotBase,	Loglevel, TelliotEvent };
->>>>>>> 1a5b7095 (feat: sensors 수정)
