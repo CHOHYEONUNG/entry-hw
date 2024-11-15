@@ -1,22 +1,22 @@
 const {
-    TelliotBase,
-    Loglevel,
-    TelliotEvent
-} = require('./Telliot_Base');
+	NepesAICarBase,
+	Loglevel,
+	NepesAICarEvent
+} = require('./nepes_ai_car_base');
 
-class TelliotLite extends TelliotBase {
-    constructor () {
-        super();
-    }
+class NepesAICar extends NepesAICarBase {
+	constructor () {
+		super();
+	}
 
     // ��Ʈ�� �������� ����Ǿ����� ȣ���
     init(handler, config) {
-        super.init(handler, config);
+		super.init(handler, config);
     }
 
     // ���� ����õ�(handshake) ���� �Ŀ� ȣ���
     setSerialPort(sp) {
-        super.setSerialPort(sp);
+		super.setSerialPort(sp);
     }
 
     // ���� ����õ��� ����̽��� ���� ������. checkInitialData �� ����Ǿ��ִٸ� �ʼ�
@@ -38,13 +38,13 @@ class TelliotLite extends TelliotBase {
     // ����̽����� �����͸� �޾ƿ� ��, �������� �����͸� ������ ���� ȣ��Ǵ� ����. handler �� �����ϴ� ������ ���� ���� �� �ִ�.
     // handler.write(key, value) �� ������ ���� Entry.hw.portData ���� �޾ƺ� �� �ִ�.
     requestRemoteData(handler) {
-        super.requestRemoteData(handler);
+		super.requestRemoteData(handler);
     }
 
     // ��Ʈ�� ���������� �� �����͸� ó���Ѵ�. handler.read �� �������� �����͸� �о�� �� �ִ�.
     // handler �� ���� Entry.hw.sendQueue �� ������ ���� ����.
     handleRemoteData(handler) {
-        super.handleRemoteData(handler);
+		super.handleRemoteData(handler);
     }
 
     // ����̽��� �����͸� ������ ����. control: slave �� ��� duration �ֱ⿡ ���� ����̽��� �����͸� ������.
@@ -53,20 +53,20 @@ class TelliotLite extends TelliotBase {
         return super.requestLocalData();
     }
 
-    // ����̽����� �� �����͸� ó���ϴ� ����. ���⼭�� ó���� �����Ͱ� ���� ��ŵ�Ͽ���.
+	// ����̽����� �� �����͸� ó���ϴ� ����. ���⼭�� ó���� �����Ͱ� ���� ��ŵ�Ͽ���.
     handleLocalData(data) {
-        super.handleLocalData(data);
+		super.handleLocalData(data);
     }
 
     // Ŀ���Ͱ� ���������� �� ȣ��Ǵ� ����, ��ĵ ���� Ȥ�� ����̽� ���� ������ ȣ��ȴ�.
     disconnect(connector) {
-        super.disconnect(connector);
+		super.disconnect(connector);
     }
 
     // ��Ʈ�� ���������� ���� ������ �������� �� �߻��ϴ� ����.
     reset() {
-        super.reset();
+		super.reset();
     }
 }
 
-module.exports = new TelliotLite();
+module.exports = new NepesAICar();

@@ -1,0 +1,27 @@
+{
+	"id": "FFFF01",
+	"name": {
+		"en": "NEPES AI Car",
+		"ko": "AI 넷패스 카"
+	},
+	"category": "board",
+	"platform": ["win32", "darwin"],
+	"icon": "nepes_ai_car.png",
+	"module": "nepes_ai_car.js",
+	"url": "https://www.nepes.co.kr/",
+	"email": "contact@nepes.co.kr",
+	"reconnect" : false,
+	"entry": {
+		"protocol": "json"
+	},
+	"select_com_port" : true,
+	"hardware": {
+		"type": "bluetooth",
+		"control": "slave",
+		"duration": 1000,
+		"vendor": "Microsoft",
+		"parity": "none",
+		"baudRate": 115200,
+		"firmwarecheck": false
+	}
+}
